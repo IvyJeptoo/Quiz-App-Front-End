@@ -1,0 +1,14 @@
+.navbar{
+    background-color: #262730;
+    padding: 1em;
+
+}
+.navbar ul li a:hover{
+    background-color: #77ba99;
+    border-radius: 3px;
+    color: black;
+    
+}
+.primarycolor{
+    color: #eff0d1;
+}
