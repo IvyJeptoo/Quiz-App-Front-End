@@ -3,8 +3,9 @@
         <div class="col-md-1"></div>
 
         <div class="col-md-5 ">
-            <h4 class="logo">Create your Quiz here</h4>
+            <h4 class="logo">Create Quiz</h4>
             <hr>
+            <form class="allquiz" action="">
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Quiz Name:</label>
                 <input type="text" class="form-control input" id="exampleFormControlInput1" >
@@ -18,21 +19,25 @@
                 <label for="exampleFormControlTextarea1" class="form-label">Quiz Description:</label>
                 <textarea class="form-control input" id="exampleFormControlTextarea1" rows="3"></textarea>
               </div>
-              <div class="buttons ">
-              <a href="#">
-                <button class="btn">Create Questions</button>
+              <div class="buttons topspace">
+              <a [routerLink]="['/addquestions']" href="#">
+                <button  class="btn">Create Questions</button>
             </a>
+
             <a href="#">
                 <button class="btn">Save to Drafts</button>
             </a>
+            
         </div>
+
+    </form>
         </div>
         <div class="col-md-5">
             <div class="card createcard" >
                                 
                 <img src="https://images.pexels.com/photos/904616/pexels-photo-904616.jpeg?auto=compress&cs=tinysrgb&w=1600" class="card-img-top" alt="...">
                 
-                <div class="card-body">
+                <div class="card-body" style="background-color: #eff0d1;">
                     <div class="main">
                         <h5  class="card-title maincolor ">Title goes here</h5>
                   

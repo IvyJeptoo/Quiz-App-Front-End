@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute,Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-createquiz',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreatequizComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  // createquestions(){
+  //   this.router.navigate(['createquestions'], {relativeTo: this.route})
+  // }
+  addquestions(){
+    this.router.navigate(['createquestions'], {relativeTo: this.route})
   }
 
 }
