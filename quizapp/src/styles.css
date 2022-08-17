@@ -91,8 +91,8 @@ h3{
 .createquiz{
     background-color: #262730;
     color:  #77ba99;
-    margin-top: 2em;
-    padding: 2em;
+    margin-top: 3em;
+    padding: 3em;
 }
 .btn{
     
@@ -105,13 +105,32 @@ h3{
 .btn:hover{
     background-color: #262730;
     color: #77ba99;
+    border: 1px solid #77ba99;
 }
-
-
-
-
-
-
+.topspace{
+    margin-top: 3em;
+}
+/* TAKE QUIZ */
+.quizset{
+    background-color:#262730 ;
+    height: 91.5vh;
+    padding-top: 2em;
+    color: #77ba99;
+}
+.quizborder{
+    border: 1px solid #77ba99;
+    color: #eff0d1;
+    padding: 3em;
+}
+.time{
+    text-align: right;
+    margin-right: 4em;
+    margin-bottom: 1em;
+}
+.next{
+    margin-left: 30em;
+    margin-top: 1em;
+}
 
 @media only screen and (max-width: 800px){
     .rescard{
@@ -121,6 +140,23 @@ h3{
         width: 19em;
         margin-top: 2em;
     }
+    .createquiz{
+        margin-top: 0;
+    }
+    
+    .quizborder{
+        margin: 1em;
+        width: 22em;
+        padding: 1em;
+    }
+    .next{
+        margin-left: 8em;
+        margin-top: 0.5em;
+    }
+    .quizset{
+        overflow-y: hidden;
+    }
+
    
 
 }
