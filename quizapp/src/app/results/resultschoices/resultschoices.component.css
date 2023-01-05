@@ -1,0 +1,11 @@
+.set{
+    margin-bottom: 2em;
+    /* margin-left: 5em; */
+}
+.list-group-item{
+    background-color: #E9F0F0;
+}
+.tally{
+    text-align: start;
+    margin-left: 1em;
+}

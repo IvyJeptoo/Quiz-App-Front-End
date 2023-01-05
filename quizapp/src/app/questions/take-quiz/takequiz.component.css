@@ -1,0 +1,22 @@
+.card{
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0.5em;
+    background-color: #8ca7ab;
+}
+li{
+    list-style-type: none;
+    cursor: pointer;
+    margin: 0.5em 0;
+    transition: transform .2s;
+}
+li:hover{
+    transform: scale(1.1);
+    /* background-color: grey;
+    border: 1px solid black; */
+}
+ol{
+    padding: 0;
+}
+
+
