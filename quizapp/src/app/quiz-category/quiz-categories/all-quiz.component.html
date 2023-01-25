@@ -1,0 +1,88 @@
+<div class="container allquiz">
+  <div class="row quiz gx-5 row-cols-md-3">
+    <div *ngFor="let category of categoryList" class="col">
+      <div class="card rescard">
+        <img
+          src="{{ category.img }}"
+          height="240em"
+          class="card-img-top"
+          alt="..."
+        />
+        <hr />
+
+        <div class="card-body">
+          <div style="height: 130px" class="quiz-card-body">
+            <div class="main">
+              <h5 class="card-title">{{ category.title }}</h5>
+              <div class="icons">
+                <i class="bx bx-edit-alt bx-sm bx-tada-hover icon"></i> &nbsp;
+                <i
+                  class="bi bi-trash bx-flashing-hover icon"
+                  data-bs-toggle="modal"
+                  data-bs-target="#staticBackdrop"
+                  style="font-size: 1.5rem; color: red"
+                ></i>
+                <div
+                  class="modal fade"
+                  id="staticBackdrop"
+                  data-bs-backdrop="static"
+                  data-bs-keyboard="false"
+                  tabindex="-1"
+                  aria-labelledby="staticBackdropLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">
+                          Confirm Deletion
+                        </h5>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body">
+                        Are you sure you want to delete this Quiz?
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-success btn-sm"
+                          data-bs-dismiss="modal"
+                        >
+                          Cancel
+                        </button>
+                        <button
+                          (click)="deleteCategory(category.id)"
+                          type="button"
+                          class="btn btn-danger btn-sm"
+                          data-bs-dismiss="modal"
+                        >
+                          Delete
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="card-text">{{ category.desc }}</p>
+          </div>
+          <div class="buttons">
+            <a [routerLink]="['/questions/create-questions']">
+              <button style="width: 10em" class="button">
+                Create Questions
+              </button>
+            </a>
+            <a routerLink="/questions/{{ category.id }}">
+              <button class="button">Take Quiz</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

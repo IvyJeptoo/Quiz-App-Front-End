@@ -1,37 +1,26 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AllQuizComponent } from './quiz/all-quiz/all-quiz.component';
+import { AllQuizComponent } from './quiz-category/quiz-categories/all-quiz.component';
 import { CreateQuestionsComponent } from './questions/create-questions/create-questions.component';
-import { CreatequizComponent } from './quiz/create-quiz/createquiz.component';
-import { ResultschoicesComponent } from './results/resultschoices/resultschoices.component';
+import { CreatequizComponent } from './quiz-category/create-quiz/createquiz.component';
+import { ResultschoicesComponent } from './questions/resultschoices/resultschoices.component';
 import { TakequizComponent } from './questions/take-quiz/takequiz.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 
-// const routes: Routes = [
-//   { path: '', redirectTo: 'welcome', pathMatch: 'full' },
-//   { path: 'welcome', component: WelcomeComponent },
-//   { path: 'takequiz', component: TakequizComponent },
-//   { path: 'addquestions', component: CreateQuestionsComponent },
-//   { path: 'createquiz', component: CreatequizComponent },
-//   { path: 'choices', component: ResultschoicesComponent },
-//   { path: 'allquiz', component: AllQuizComponent },
-
-// ];
 const appRoutes: Routes = [
-  { path: '', redirectTo: 'quiz', pathMatch: 'full' },
   { path: 'welcome', component: WelcomeComponent },
+  {
+    path: 'quiz',
+    loadChildren: () => import ('./quiz-category/quiz.module').then(m => m.QuizModule)
+  },
   {
     path: 'questions',
     loadChildren: () => import ('./questions/questions.module').then(m => m.QuestionsModule)
   },
-  {
-    path: 'quiz',
-    loadChildren: () => import ('./quiz/quiz.module').then(m => m.QuizModule)
-  },
-  {
-    path: 'main-results',
-    loadChildren: () => import ('./results/results.module').then(m => m.ResultsModule)
-  },
+  { path: '', redirectTo: 'quiz/all-quiz', pathMatch: 'full' },
+
+  
+  
 
 
 ]
@@ -42,7 +31,4 @@ const appRoutes: Routes = [
 })
 export class AppRoutingModule {}
 export const routingComponents = [
-  AllQuizComponent,
-  CreateQuestionsComponent,
-  CreateQuestionsComponent,
 ];

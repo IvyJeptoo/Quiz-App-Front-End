@@ -7,9 +7,10 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 
-import { ResultsModule } from './results/results.module';
-import { QuizModule } from './quiz/quiz.module';
+import { QuizModule } from './quiz-category/quiz.module';
 import { QuestionsModule } from './questions/questions.module';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,9 +23,11 @@ import { QuestionsModule } from './questions/questions.module';
     BrowserModule,
     UserAuthModule,    
     QuizModule,
-    ResultsModule,
     AppRoutingModule,
     QuestionsModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

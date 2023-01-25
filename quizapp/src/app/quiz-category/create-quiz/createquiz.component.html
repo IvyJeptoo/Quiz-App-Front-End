@@ -1,0 +1,45 @@
+<div class="container ">
+    <div class="row">
+        <div class="col-md-2"></div>
+
+        <div class="col-md-8 form createquiz">
+            <h4 style="text-align: center;" >Create Quiz Category</h4>
+            <hr>
+            <div *ngIf="messageAlert" class="alert alert-success alert-dismissible fade show" role="alert">
+              <strong>Success!</strong>  Category created
+                <button type="button" (click)="closeAlert()"  data-bs-dismiss="alert" aria-label="Close">X</button>
+            </div>
+            <form [formGroup]="createCategory" class="allquiz" (ngSubmit)="submitCategory()">
+              <div class="mb-3">
+                <label  class="form-label">Quiz </label>
+                <input class="form-control input" type="text" formControlName="title">
+              </div>
+              <div class="mb-3">
+                <label  class="form-label">Quiz Image:</label>
+                <input class="form-control input" type="file" formControlName="img" id="img"  (change)="onFileChange($event)">
+              </div>
+             
+              
+
+              <div class="mb-3">
+                <label  class="form-label">Quiz Description:</label>
+                <textarea class="form-control input"  rows="3" formControlName="desc"></textarea>
+              </div>
+              <div class="buttons topspace">
+              <!-- <a routerLink="/questions/create-questions" href="#"> -->
+                <button type="submit"  class="quiz-btn">Create Category</button>
+            <!-- </a> -->
+
+            <!-- <a href="#">
+                <button class="quiz-btn">Save to Drafts</button>
+            </a> -->
+            
+        </div>
+
+    </form>
+        </div>
+        
+        <div class="col-md-2"></div>
+
+    </div>
+</div>

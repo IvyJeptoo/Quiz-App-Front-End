@@ -1,6 +1,23 @@
 .start{
     margin-top: 2em;
+    border-radius: 1em;
+    background-color: #E9F0F0;
+    width: 8em;
+    
+}
+.start:hover{
+    background-color: black;
+    color: #E9F0F0;
+
 }
 ol li{
     margin-left: 2em;
+    color: #E9F0F0;
+}
+.quiz-border{
+    border: 1px solid #8CA7AB;
+    margin-top: 4em;
+    color: black;
+    padding: 5em;
+    padding-right: 2em;
 }

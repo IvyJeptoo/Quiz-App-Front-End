@@ -1,25 +1,42 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { TakequizComponent } from './take-quiz/takequiz.component';
 import { CreateQuestionsComponent } from './create-questions/create-questions.component';
+import { ResultschoicesComponent } from './resultschoices/resultschoices.component';
+import { HttpClientModule } from '@angular/common/http';
+import { TakequizComponent } from './take-quiz/takequiz.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
+  {
+    path: ':categoryId',
+    component: TakequizComponent,
+  },
   {
     path: 'create-questions',
     component: CreateQuestionsComponent,
   },
+  
   {
-    path: 'take-quiz',
-    component: TakequizComponent,
+    path: 'results',
+    component: ResultschoicesComponent,
   },
+  
 ];
 
 @NgModule({
-  declarations: [TakequizComponent, CreateQuestionsComponent],
-  imports: [CommonModule, 
-    RouterModule.forChild(routes)
+  declarations: [ 
+    TakequizComponent,
+    CreateQuestionsComponent,
+    ResultschoicesComponent
+  ],
+    
+  imports: [
+    CommonModule, 
+    RouterModule.forChild(routes),
+    HttpClientModule,
+    ReactiveFormsModule
    ],
-  exports: [TakequizComponent, CreateQuestionsComponent],
+  exports: [],
 })
 export class QuestionsModule {}

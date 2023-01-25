@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { AllQuizComponent } from './all-quiz/all-quiz.component';
+import { AllQuizComponent } from './quiz-categories/all-quiz.component';
 import { CreatequizComponent } from './create-quiz/createquiz.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -13,16 +15,19 @@ const routes: Routes = [
     path: 'all-quiz',
     component: AllQuizComponent,
   },
+  
 ];
 
 @NgModule({
   declarations: [
     AllQuizComponent,
-    CreatequizComponent
+    CreatequizComponent,
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   exports: [
     AllQuizComponent,
