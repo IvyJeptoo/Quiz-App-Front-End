@@ -11,6 +11,7 @@ import { QuizModule } from './quiz-category/quiz.module';
 import { QuestionsModule } from './questions/questions.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AuthenticationModule } from './authentication/authentication.module';
 
 @NgModule({
   declarations: [
@@ -25,11 +26,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     QuizModule,
     AppRoutingModule,
     QuestionsModule,
+    AuthenticationModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
