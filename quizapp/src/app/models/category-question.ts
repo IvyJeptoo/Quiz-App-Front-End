@@ -18,3 +18,10 @@ export class Category {
     correct: boolean = false;
   }
   
+  export interface User {
+    id: number;
+    name: string;
+    email: string;
+    password: string;
+  }
+  
