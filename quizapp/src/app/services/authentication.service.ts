@@ -49,6 +49,7 @@ export class AuthenticationService {
 
     
   }
+
   setCurrentUser(user: any) {
     if(user) {
       console.log('setting current user:', user);
