@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { first } from 'rxjs';
 import { Category } from 'src/app/models/category-question';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 import { QuestionService } from 'src/app/services/question.service';
 
 @Component({
@@ -15,7 +17,9 @@ export class NavbarComponent implements OnInit {
   filteredCategory: Category[] = [];
 
   constructor(
-    private questionService: QuestionService
+    private questionService: QuestionService,
+    private authService: AuthenticationService,
+    private router: Router
     ) { }
 
  
@@ -42,14 +46,15 @@ export class NavbarComponent implements OnInit {
     
 
   }
-  // createQuiz(){
-  //   console.log("hello");
-    
-
-  // }
+  
 
   ngOnInit(): void {
     this.getAllCategory()
+  }
+
+  logout(){
+    this.router.navigate(['/authentication/login'])
+    this.authService.logout()
   }
 
 }

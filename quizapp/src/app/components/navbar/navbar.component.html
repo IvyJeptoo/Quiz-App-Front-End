@@ -24,7 +24,7 @@
             <li class="nav-item">
               <a routerLink="questions" class="nav-link primarycolor" href="#">Logs</a>
             </li> 
-            <div class="dropdown">
+            <div class="nav-item dropdown">
               <a
                 class="dropdown-toggle d-flex align-items-center hidden-arrow"
                 href="#"
@@ -43,11 +43,9 @@
                 <li>
                   <a class="dropdown-item" href="#">My profile</a>
                 </li>
+                
                 <li>
-                  <a class="dropdown-item" href="#">Settings</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">Logout</a>
+                  <a (click)="logout()" class="dropdown-item" href="#">Logout</a>
                 </li>
               </ul>
             </div>
