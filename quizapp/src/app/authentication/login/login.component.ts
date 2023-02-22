@@ -47,13 +47,14 @@ export class LoginComponent implements OnInit {
       console.log('calling service');
       
       this.authService.userLogin(user).subscribe(
-        (response) => {
-          console.log(this.authService.isAuthenticated());
-          
+        (response) => {          
           this.router.navigate(['/welcome'])
           const token = response.token;
+          const expiresIn = response.expires_in;
+          // set token expiration time to one hour
+          const expirationTime = new Date().getTime() + 3600 * 1000;
           localStorage.setItem('token', token);
-          console.log(token);
+          localStorage.setItem('expirationTime', expirationTime.toString());
           
           // if(response && response.token){
           //   this.authService.authenticated = true;
