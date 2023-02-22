@@ -61,25 +61,19 @@ export class AuthenticationService {
     }
     
   }
-  // getCurrentUser() {
-  //   return this.currentUser;
-  // }
-
-  isLoggedIn() {
-    return !!localStorage.getItem('token');
+  isLoggedIn(): boolean {
+    return !!localStorage.getItem('token')
   }
-
-  // getToken() {
-  //   return localStorage.getItem('token');
-  // }
+  
 
   logout() {
+    console.log('Logout called');
+    
     localStorage.removeItem('token');
     this.authenticated = false;
   }
   isAuthenticated(): boolean{    
     
-    // console.log(this.authenticated);
     return this.authenticated;
     
   }
