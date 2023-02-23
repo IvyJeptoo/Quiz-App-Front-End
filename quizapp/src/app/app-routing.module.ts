@@ -17,7 +17,7 @@ const appRoutes: Routes = [
     path: 'authentication',
     loadChildren: () => import ('./authentication/authentication.module').then(m => m.AuthenticationModule)
   },
-  // { path: '', redirectTo: 'authentication/login', pathMatch: 'full' },
+  { path: '', redirectTo: '/authentication/login', pathMatch: 'full' },
 
   
   
