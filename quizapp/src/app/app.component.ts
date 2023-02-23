@@ -24,4 +24,20 @@ export class AppComponent {
     isWelcomePage(){
       return this.router.url ==='/welcome'
     }
+
+  ngOnIt(): void {
+    const token = localStorage.getItem('token');
+    const expirationTime = localStorage.getItem('expirationTime')
+    console.log('Token:', token);
+    
+    if(token && expirationTime){
+      const now = new Date().getTime();
+      if(now > parseInt(expirationTime)){
+        localStorage.removeItem('token');
+        localStorage.removeItem('expirationTime');
+        this.authService.logout();
+        this.router.navigate(['/authentication/login'])
+      }
+    }
+  }
 }

@@ -6,20 +6,27 @@ import { ResultschoicesComponent } from './resultschoices/resultschoices.compone
 import { HttpClientModule } from '@angular/common/http';
 import { TakequizComponent } from './take-quiz/takequiz.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AuthGuard } from '../auth.guard';
 
 const routes: Routes = [
   {
     path: ':categoryId',
     component: TakequizComponent,
+    canActivate:[AuthGuard]
+
   },
   {
     path: 'create-questions',
     component: CreateQuestionsComponent,
+    canActivate:[AuthGuard]
+
   },
   
   {
     path: 'results',
     component: ResultschoicesComponent,
+    canActivate:[AuthGuard]
+
   },
   
 ];
